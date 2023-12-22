@@ -4,8 +4,6 @@
 
 1. Fork this repository and clone the project
 
-###### Please give me proper credit by linking back to [vatsalsinghkv.vercel.app](https://vatsalsinghkv.vercel.app).
-
 ```bash
   git clone https://github.com/<YOUR USERNAME>/portfolio-website.git
 ```
