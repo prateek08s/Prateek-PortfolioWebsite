@@ -1,6 +1,56 @@
 {
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "This is my portfolio website, where I showcase my skills, experiences, and projects to provide a comprehensive overview of my capabilities and accomplishments",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "your-test-script", 
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prateek08s/Prateek-PortfolioWebsite"
+  },
+  "keywords": [
+    "next.js",
+    "react",
+    "web development"
+  ],
+  "author": "Prateek Sachan",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^7.0.0", 
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.5.0"
+  },
   "dependencies": {
     "lottie": "^0.0.1",
-    "web": "^0.0.2"
+    "web": "^0.0.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
   }
 }
