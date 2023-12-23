@@ -7,8 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "your-test-script", 
-    "deploy": "vercel --prod"
+    "test": "your-test-script",
+    "deploy": "vercel --prod",
+    "vercel-build": "next build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   "author": "Prateek Sachan",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^7.0.0", 
+    "husky": "^7.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.5.0"
   },
@@ -52,5 +53,12 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "all"
+  },
+  "vercel": {
+    "build": {
+      "env": {
+        "CI": "true"
+      }
+    }
   }
 }
