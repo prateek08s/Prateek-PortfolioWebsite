@@ -8,7 +8,7 @@
     "format:check": "prettier --check .",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install front/.husky"
   },
   "dependencies": {
     "-": "^0.0.1",
