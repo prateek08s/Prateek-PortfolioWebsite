@@ -26,7 +26,7 @@ export const seoData = {
     'Prateek Sachan is a passionate Data Enthusiast and Machine Learning Engineer. Explore Prateek`s expertise in Front-End Development, Data Analytics, and Machine Learning. Dive into innovative projects and learn about Prateek`s journey.',
   author: 'Prateek Sachan',
   image: 'https://example.com/prateek-thumbnail.jpg',
-  url: 'https://vatsalsinghkv.vercel.app/',
+  url: 'https://portfolio-website-duyjbzd69-prateek-sachans-projects.vercel.app/',
   keywords: [
     'Prateek Sachan',
     'Data Enthusiast',

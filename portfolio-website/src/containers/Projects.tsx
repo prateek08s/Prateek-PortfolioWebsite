@@ -1,4 +1,3 @@
-// Import necessary modules and components
 'use client';
 import { projectsSection } from '@/lib/content/projects';
 import { PROJECTS_INITIALLY } from '@/lib/utils/config';
@@ -11,9 +10,7 @@ import { getSectionAnimation, projectVariants } from '@/styles/animations';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-interface ProjectsProps { }
-
-const Projects: React.FC<ProjectsProps> = () => {
+const Projects = () => {
   const { projects, title } = projectsSection;
   const [showMore, setShowMore] = useState(false);
   const topProjects = projects.slice(0, PROJECTS_INITIALLY);
@@ -22,35 +19,45 @@ const Projects: React.FC<ProjectsProps> = () => {
 
   return (
     <Wrapper id="projects" animate={false} {...getSectionAnimation}>
-      <motion.h2
-        className={`text-5xl font-extrabold text-center mb-8 ${
-          // Use conditional class based on theme
-          'text-black dark:text-white' 
-          }`}
-      >
+      <motion.h2 className="heading-secondary text-center !mb-12">
         {title}
       </motion.h2>
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
-        {sortByYear(visibleProjects).map((project, i) => (
-          <motion.div
-            key={project.id}
-            className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
-            variants={projectVariants}
-            initial="hidden"
-            animate="show"
-            custom={i}
-            whileHover={{ y: -5 }}
-          >
-            <ProjectCard {...project} />
-          </motion.div>
-        ))}
+      <div className="grid gap-6 grid-cols-auto-250 xs:grid-cols-auto-300 place-items-center">
+        {sortByYear(visibleProjects).map((project, i) => {
+          if (i < PROJECTS_INITIALLY) {
+            return (
+              <ProjectCard
+                {...project}
+                key={project.id}
+                variants={projectVariants}
+                initial="hidden"
+                whileInView="show"
+                custom={i}
+                viewport={{ once: true }}
+              />
+            );
+          }
+
+          return (
+            <ProjectCard
+              {...project}
+              key={project.id}
+              variants={projectVariants}
+              initial="hidden"
+              animate="show"
+              custom={i - PROJECTS_INITIALLY}
+            />
+          );
+        })}
       </div>
       {projects.length > PROJECTS_INITIALLY && (
         <Button
-          className="mt-8 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full hover:opacity-90 transition duration-300"
+          size="lg"
+          className="!mt-20"
+          center
           onClick={() => setShowMore((prev) => !prev)}
         >
-          {showMore ? 'Show Less' : 'Show More Projects'}
+          {showMore ? 'show less' : 'show more'}
         </Button>
       )}
     </Wrapper>
