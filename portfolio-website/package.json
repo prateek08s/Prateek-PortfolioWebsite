@@ -14,7 +14,7 @@
     "-": "^0.0.1",
     "@lottiefiles/react-lottie-player": "^3.5.0",
     "framer-motion": "^9.0.3",
-    "hover.css": "^2.3.2",
+    "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "next": "^13.5.3",
     "react": "^18.2.0",
@@ -31,28 +31,20 @@
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.12",
     "eslint": "^8.44.0",
     "eslint-config-next": "^13.5.3",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.0",
-    "postcss": "^8.4.32",
+    "postcss": "^8.4.18",
     "prettier": "^2.8.3",
-    "tailwindcss": "^3.4.0",
+    "tailwindcss": "^3.2.1",
     "typescript": "4.8.4"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --fix",
     "*.{js,jsx,css,md}": "prettier --write"
-  },
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/prateek08s/portfolio-website.git",
-  "author": "Prateek08s <prateek.sachan2020@vitstudent.ac.in>",
-  "license": "MIT"
+  }
 }

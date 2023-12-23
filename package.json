@@ -1,64 +1,49 @@
 {
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "This is my portfolio website, where I showcase my skills, experiences, and projects to provide a comprehensive overview of my capabilities and accomplishments",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "vercel --prod",
-    "vercel-build": "next build",
-    "pre-commit": "npx --no-install lint-staged"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prateek08s/Prateek-PortfolioWebsite"
-  },
-  "keywords": [
-    "next.js",
-    "react",
-    "web development"
-  ],
-  "author": "Prateek Sachan",
-  "license": "MIT",
-  "devDependencies": {
-    "husky": "^7.0.0",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.5.0"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "lottie": "^0.0.1",
-    "web": "^0.0.2",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "-": "^0.0.1",
+    "@lottiefiles/react-lottie-player": "^3.5.0",
+    "framer-motion": "^9.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "next": "^13.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "save-dev": "^0.0.1-security",
+    "sharp": "^0.31.3"
   },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "devDependencies": {
+    "@iconify/react": "^4.0.1",
+    "@next/eslint-plugin-next": "^13.4.8",
+    "@types/node": "18.11.3",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.5.3",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "postcss": "^8.4.18",
+    "prettier": "^2.8.3",
+    "tailwindcss": "^3.2.1",
+    "typescript": "4.8.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "all"
-  },
-  "vercel": {
-    "build": {
-      "env": {
-        "CI": "true"
-      }
-    }
+    "*.{js,jsx}": "eslint --fix",
+    "*.{js,jsx,css,md}": "prettier --write"
   }
 }
