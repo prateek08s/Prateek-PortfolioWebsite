@@ -7,9 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "your-test-script",
     "deploy": "vercel --prod",
-    "vercel-build": "next build"
+    "vercel-build": "next build",
+    "pre-commit": "npx --no-install lint-staged"
   },
   "repository": {
     "type": "git",
