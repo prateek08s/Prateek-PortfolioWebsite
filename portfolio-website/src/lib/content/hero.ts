@@ -4,16 +4,12 @@ import { resumeFileName } from '@/lib/utils/config'
 export const heroSection: HeroSectionType = {
     subtitle: 'Hi, my name is',
     title: 'Prateek Sachan.',
-    tagline: 'Data Enthusiast | Machine Learning Engineer',
-    description: `Hello, I'm a dedicated tech enthusiast with expertise in Front-End web development, 
-    Data Analytics, Machine Learning, and Deep Learning. Proficient in HTML, CSS, and JavaScript, 
-    I specialize in creating seamless user experiences. My innovative approach and diverse skill set 
-    enable me to excel across various domains. Explore my portfolio to discover cutting-edge solutions
-    for your projects.`,
-    specialText: 'Currently available for a job & freelance',
+    tagline: 'Software System Designer II @ AMD',
+    description: `I build AI-powered internal tools that automate engineering workflows. ML prediction models, intelligent agents, MCP integrations, and data dashboards that turn complex validation data into decisions.`,
+    specialText: 'Open to collaborations & interesting problems',
     cta: {
-        title: 'see my resume',
+        title: 'View Resume',
         url: `/${resumeFileName}`,
-        hideInDesktop: true,
+        hideInDesktop: false,
     },
 };

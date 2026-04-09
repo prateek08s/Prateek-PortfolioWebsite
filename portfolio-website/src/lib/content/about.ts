@@ -3,21 +3,20 @@ import { AboutSectionType } from '@/lib/types/sections'
 export const aboutSection: AboutSectionType = {
     title: 'about me',
     list: {
-        title: 'Here are a few technologies I specialize in:',
+        title: 'Technologies I work with:',
         items: [
-            'Java',
-            'HTML',
-            'CSS',
-            'JavaScript',
-            'C Programming',
-            'Data Analytics',
-            'Data Visualization (e.g., Tableau)',
-            'Data Processing with Python (e.g., Pandas, NumPy)',
-            'Database Management (e.g., SQL, MongoDB)',
-            'Machine Learning with Python (e.g., Scikit-Learn, TensorFlow)',
-            'Deep Learning (e.g., Keras, PyTorch)',
-            'UI/UX Design (e.g., Figma)'
+            'Python · PyTorch · TensorFlow',
+            'Scikit-learn · Deep Learning · NLP',
+            'LangChain · LangGraph · MCP',
+            'Flask · FastAPI · REST APIs',
+            'React · Next.js · TypeScript',
+            'HTML · CSS · Tailwind',
+            'SQL · MySQL · Snowflake',
+            'Pandas · NumPy · Matplotlib',
+            'Tableau · Power BI · Excel',
+            'Docker · Git · Claude Code',
+            'Figma · Node.js · Vercel',
         ],
     },
-    img: '/prateek-sachan.jpg', // Updated image path with a leading slash
+    img: '/Portfolio_image.PNG',
 };

@@ -1,6 +1,8 @@
 import {
   About,
+  Certifications,
   Contact,
+  Education,
   Experience,
   Hero,
   Layout,
@@ -10,7 +12,6 @@ import {
 
 import type { NextPage } from 'next';
 
-
 const Home: NextPage = () => {
   return (
     <>
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
         <About />
         <Skills />
         <Experience />
+        <Education />
+        <Certifications />
         <Projects />
         <Contact />
       </Layout>

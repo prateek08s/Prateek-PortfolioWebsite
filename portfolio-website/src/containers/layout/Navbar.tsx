@@ -12,13 +12,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-/**
- * Hides the navbar while scrolling down
- * @param {Object} config
- * @param {String} [config.id=navbar] - id of navbar
- * @param {Number} [config.offset=100] - offset of navbar in px
- */
-
 const hideNavWhileScrolling = ({
   id = 'navbar',
   offset = 100,
@@ -71,6 +64,28 @@ const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
   );
 };
 
+const ScrollProgressBar = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setProgress(pct);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div
+      className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-sky-500 to-indigo-500 transition-all duration-100"
+      style={{ width: `${progress}%` }}
+    />
+  );
+};
+
 const Navbar = () => {
   const { cta, navLinks } = navbarSection;
   const [navbarCollapsed, setNavbarCollapsed] = useState(false);
@@ -89,8 +104,10 @@ const Navbar = () => {
       initial="hidden"
       animate="show"
       id="navbar"
-      className="fixed inset-x-0 top-0 right-0 z-50 flex items-end justify-between px-8 py-4 duration-500 md:px-6 xl:px-12 backdrop-blur-lg"
+      className="fixed inset-x-0 top-0 right-0 z-50 flex items-end justify-between px-8 py-4 duration-500 md:px-6 xl:px-12 backdrop-blur-lg border-b border-slate-200/30 dark:border-slate-700/30"
     >
+      <ScrollProgressBar />
+
       <h1 className="relative text-2xl capitalize font-signature text-accent group top-1">
         <Link href="/#hero" className="block">
           {author.name}

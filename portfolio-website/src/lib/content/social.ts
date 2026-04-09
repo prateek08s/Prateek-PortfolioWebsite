@@ -8,10 +8,6 @@ export const socialSection: SocialSectionType = {
             url: socialLinks.github,
         },
         {
-            icon: 'mdi:instagram',
-            url: socialLinks.instagram,
-        },
-        {
             icon: 'lucide:twitter',
             url: socialLinks.twitter,
         },

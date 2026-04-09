@@ -11,14 +11,6 @@
 @layer base {
   /* Color variables for future use */
   :root {
-    /* --color-bg: #fcfaf8; */
-    /* --color-accent: #14cf93; */
-    /* --color-accent: ##64ffda; */
-    /* --color-accent: #61dafb); */
-    /* --color-text: #383838; */
-    /* --color-dark-2: #282828; */
-    /* --color-dark-3: #a2a2a2; */
-
     /* Light Theme */
     --color-bg: theme(colors.slate.50);
     --color-bg-secondary: theme(colors.white);
@@ -51,10 +43,75 @@
   * {
     @apply focus:outline-dashed outline-[3px] outline-offset-4 outline-accent;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* TYPOGRAPHY */
 
 .heading-secondary {
-  @apply text-3xl sm:text-4xl capitalize font-medium mb-8 sm:mb-12 text-dark-2;
+  @apply text-3xl sm:text-4xl capitalize font-medium mb-6 sm:mb-8 text-dark-2;
+}
+
+/* GRADIENT TEXT */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500;
+}
+
+.dark .gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400;
+}
+
+/* SCROLL PROGRESS BAR */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, theme(colors.sky.500), theme(colors.indigo.500));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* SECTION DIVIDER */
+.section-divider {
+  @apply w-16 h-1 rounded-full bg-accent mx-auto mb-8;
+}
+
+/* GLOW EFFECT */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+}
+
+.dark .glow-accent {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+/* TAG BADGE */
+.tag-badge {
+  @apply inline-block px-2 py-0.5 text-xs font-mono rounded-full text-accent;
+  background-color: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+/* CARD GLASS */
+.card-glass {
+  @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200/60 dark:border-slate-700/60;
+}
+
+/* ANIMATED UNDERLINE HEADING */
+.section-heading {
+  @apply relative inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  @apply absolute -bottom-2 left-0 h-[3px] w-0 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-full;
+  transition: width 0.4s ease;
+}
+
+.section-heading:hover::after {
+  @apply w-full;
 }

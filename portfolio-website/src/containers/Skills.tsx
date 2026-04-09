@@ -1,38 +1,28 @@
-// Import necessary modules and components
 'use client';
 import { skillsSection } from '@/lib/content/skills';
-
 import { Skill, Wrapper } from '@/components';
-
 import { getSectionAnimation } from '@/styles/animations';
 
-import { FaAtom } from 'react-icons/fa'; // Example: Replace with your preferred icon library
-
 const Skills = () => {
-  // Destructure data from skillsSection
   const { title, skills } = skillsSection;
 
   return (
-    <Wrapper id="skills" className="flex flex-col items-center justify-center" {...getSectionAnimation}>
-      <h2 className="heading-secondary text-3xl md:text-4xl lg:text-5xl">{title}</h2> {/* Adjusted font size */}
+    <Wrapper id="skills" className="flex flex-col" {...getSectionAnimation}>
+      <div className="mb-8">
+        <p className="font-mono text-sm text-accent mb-2">Expertise</p>
+        <h2 className="heading-secondary !mb-0">{title}</h2>
+        <div className="w-16 h-1 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 mt-4"></div>
+      </div>
 
-      <div className="mt-8 space-y-16">
+      <div className="space-y-16">
         {skills.map(({ id, softwareSkills, points, title }) => (
           <Skill
             key={id}
-            className="odd:lg:flex-row-reverse"
             skills={softwareSkills}
             points={points}
             title={title}
             {...getSectionAnimation}
-          >
-            {/* Display Atom Icons for each skill */}
-            <div className="flex space-x-2 mt-4">
-              {softwareSkills.map(({ name, icon }) => (
-                <FaAtom key={name} className="text-xl" />
-              ))}
-            </div>
-          </Skill>
+          />
         ))}
       </div>
     </Wrapper>

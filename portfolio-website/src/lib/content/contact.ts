@@ -2,13 +2,10 @@ import { ContactSectionType } from '@/lib/types/sections';
 
 export const contactSection: ContactSectionType = {
     title: 'get in touch',
-    subtitle: "what's next",
+    subtitle: "What's Next",
     paragraphs: [
-        'I’m currently looking for a remote job or any new opportunities.',
-        'Whether you have a project to discuss or just want to say hi, my inbox is open for all!',
+        "Currently at AMD and always open to discussing interesting problems, collaborations, or new ideas.",
+        "Whether you have a project in mind, a question, or just want to connect — my inbox is open.",
     ],
-    link: 'https://mail.google.com/mail/?view=cm&fs=1&to=prateek.sachan727@gmail.com',
+    link: 'https://mail.google.com/mail/?view=cm&fs=1&to=prateeksachan727@gmail.com',
 };
-
-
-
